@@ -1,7 +1,8 @@
 from django.db import models
+from django.core import serializers
 from django.utils.timezone import now
-
-
+import uuid
+import json
 # Create your models here.
 
 class CarMake(models.Model):
@@ -35,12 +36,13 @@ class CarModel(models.Model):
 
 class CarDealer:
 
-    def __init__(self, address, city, id, lat, long, st, zip, full_name):
+    def __init__(self, address, city, id, lat, long, st, zip, full_name,short_name):
         # Dealer address
         self.address = address
         # Dealer city
         self.city = city
-       
+        #Dealer short name
+        self.short_name = short_name
         # Dealer id
         self.id = id
         # Location lat
