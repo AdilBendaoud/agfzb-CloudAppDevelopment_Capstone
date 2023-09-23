@@ -27,11 +27,10 @@ class CarModel(models.Model):
   year = models.DateField(null=True)
   
   def __str__(self):
-    return "care Make: "+self.car_make+", "+ \
-            "Name: "+self.name+", "+\
-            "Dealer Id: "+self.dealer_id+", "+\
+    return  "Name: "+self.name+", "+\
+            "Dealer Id: "+str(self.dealer_id)+", "+\
             "Type: "+self.type+", "+\
-            "Year: "+self.year
+            "Year: "+str(self.year)
 
 
 class CarDealer:
